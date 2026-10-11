@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      # password: ${REDIS_PASSWORD:}   # uncomment if your Redis requires auth
+
+ratelimiter:
+  capacity: 10          # max burst: 10 requests at once
+  refill-per-second: 1  # then 1 request per second, sustained
